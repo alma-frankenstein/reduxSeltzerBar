@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
+
+body {
+  background-color: pink;
+  background-image: url(https://st2.depositphotos.com/2939989/10023/i/950/depositphotos_100239638-stock-photo-bubbles-rainbow-color-background-easter.jpg);
+  margin: 40px;
+  font-family: sans-serif;
+  color: blue;
+  text-align: center;
+  padding: 5%;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+div {
+  background-color: powderblue;
+  padding-top: 2%;
+  border-radius: 10%;
+}
+
+p {
+  font-size: larger;
+}
+
+.mainButton {
+  padding-bottom: 2%;
+}
+
+.header {
+  background-color: thistle;
+  padding-bottom: .6%;
+  border-radius: 45%;
+}
+
+button {
+  background-color: thistle;
+  padding: 1%;
+  font-size: medium;
+  border-radius: 15%;
+}
+
+
