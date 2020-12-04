@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 import { createStore } from 'redux';
 // import reducer from './reducers/flavor-list-reducer';
-import reducer from './reducers/index';
+import rootReducer from './reducers/index';
 import { Provider } from 'react-redux';
 
 const store = createStore(rootReducer);

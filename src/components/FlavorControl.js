@@ -10,7 +10,7 @@ class FlavorControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false,  
+      // formVisibleOnPage: false,  
       // commented per lesson 12:
       // masterFlavorList: [{name: "Durian", brand: "Bubbeh's Bubbles", price: "2", description: "A delicacy in Singapore",
       //                   quantity: 124}, {name: "PB&J", brand: "Double Bubble", price: "1", description: "Tastes like your favorite sandwhich",
@@ -44,7 +44,11 @@ class FlavorControl extends React.Component {
       id: id
     }
     dispatch(action);
-    this.setState({formVisibleOnPage: false});
+    //this.setState({formVisibleOnPage: false});
+    const action2 = {
+      type: 'TOGGLE_FORM'
+    }
+    dispatch(action2);
   }
 
   handleSell = (id) => {
@@ -71,13 +75,18 @@ class FlavorControl extends React.Component {
   handleClick = () => {
     if (this.state.selectedFlavor != null) {
       this.setState({
-        formVisibleOnPage: false,
+        //formVisibleOnPage: false,
         selectedFlavor: null
       });
     } else {
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage,
-      }));
+      // this.setState(prevState => ({
+      //   formVisibleOnPage: !prevState.formVisibleOnPage,
+      // }));
+      const { dispatch } = this.props;
+      const action = {
+        type: 'TOGGLE_FORM'
+      }
+      dispatch(action);
     }
   }
 
@@ -89,7 +98,7 @@ class FlavorControl extends React.Component {
       currentlyVisibleState = <FlavorDetail flavor = {this.state.selectedFlavor} />
       buttonText = "return to flavor list";
     }
-    else if (this.state.formVisibleOnPage) {
+    else if (this.props.formVisibleOnPage) {
       currentlyVisibleState = <NewFlavorForm onNewFlavorCreation={this.handleAddingNewFlavorToList} />;
       buttonText = "return to flavor list";
     } else {
@@ -111,12 +120,14 @@ class FlavorControl extends React.Component {
 }
 
 FlavorControl.propTypes = {
-  masterFlavorList: PropTypes.object
+  masterFlavorList: PropTypes.object,
+  formVisibleOnPage: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
-    masterFlavorList: state
+    masterFlavorList: state.masterFlavorList,
+    formVisibleOnPage: state.formVisibleOnPage
   }
 }
 
