@@ -1,4 +1,6 @@
 import flavorListReducer from '../../reducers/flavor-list-reducer';
+import * as c from '../../actions/ActionTypes';
+
 
 describe('flavorListReducer', () => {
 
@@ -28,7 +30,7 @@ describe('flavorListReducer', () => {
   test('Should successfully add new flavor data to masterflavorList', () => {
     const { name, brand, price, description, quantity, id } = flavorData;
     action = {
-      type: 'ADD_FLAVOR',
+      type: c.ADD_FLAVOR,
       name: name,
       brand: brand,
       price: price,
@@ -52,7 +54,7 @@ describe('flavorListReducer', () => {
   test('Should decrement the number of pints in a flavor', () => {
     //const { name, brand, price, description, quantity, id } = flavorData;
     action = {
-      type: 'BUY',
+      type: c.BUY,
       // name: name,
       // brand: brand,
       // price: price,

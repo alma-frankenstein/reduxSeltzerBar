@@ -1,7 +1,9 @@
+import * as c from './../actions/ActionTypes';
+
 export default (state = {}, action) => {
   const { name, brand, price, description, quantity, id } = action;
   switch (action.type) {
-  case 'ADD_FLAVOR':
+  case c.ADD_FLAVOR:
     return Object.assign({}, state, {
       [id]: {
         name: name,
@@ -12,7 +14,7 @@ export default (state = {}, action) => {
         id: id
       }
     });
-  case 'BUY' :
+  case c.BUY :
     const newState = {...state}
       // if(flavor.id === id && flavor.quantity > 0) {
       //   flavor.quantity -= 1;

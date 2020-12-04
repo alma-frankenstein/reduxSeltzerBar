@@ -37,7 +37,7 @@ class FlavorControl extends React.Component {
     //const { name, brand, price, description, quantity, id } = newFlavor;
     const action = a.addFlavor(newFlavor);
     // {
-    //   type: 'ADD_FLAVOR',
+    //   type: c.ADD_FLAVOR,
     //   name: name,
     //   brand: brand,
     //   price: price,
@@ -52,7 +52,7 @@ class FlavorControl extends React.Component {
   }
 
   handleSell = (id) => {
-    //---------------------before adding 'BUY' in flavor-list-reducer-----------
+    //---------------------before adding c.BUY in flavor-list-reducer-----------
     // const newMasterFlavorList = this.props.masterFlavorList;
     // newMasterFlavorList.map((flavor) => {
     //   if(flavor.id === id && flavor.quantity > 0) {
@@ -66,7 +66,7 @@ class FlavorControl extends React.Component {
     const { dispatch } = this.props;
 
     const action = {
-      type: 'BUY',
+      type: c.BUY,
       id: id
     }
     dispatch(action);

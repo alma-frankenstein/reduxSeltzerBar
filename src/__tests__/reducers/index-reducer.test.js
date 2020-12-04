@@ -2,6 +2,7 @@ import rootReducer from '../../reducers/index';
 import { createStore } from 'redux';
 import formVisibleReducer from '../../reducers/form-visible-reducer';
 import flavorListReducer from '../../reducers/flavor-list-reducer';
+import * as c from '../../actions/ActionTypes';
 
 let store = createStore(rootReducer);
 
@@ -13,7 +14,7 @@ describe("rootReducer", () => {
 
   test('Check that ADD_FLAVOR action works for flavorListReducer and root reducer', () => {
     const action = {
-      type: 'ADD_FLAVOR',
+      type: c.ADD_FLAVOR,
       name: "bubble gum",
       brand: "fizzle",
       price: "3",
@@ -27,7 +28,7 @@ describe("rootReducer", () => {
   
   test('Check that TOGGLE_FORM action works for formVisibleReducer and root reducer', () => {
     const action = {
-      type: 'TOGGLE_FORM'
+      type: c.TOGGLE_FORM
     }
     store.dispatch(action);
     expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, action));

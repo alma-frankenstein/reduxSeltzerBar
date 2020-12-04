@@ -1,4 +1,5 @@
 import selectedTicketReducer from '../../reducers/selected-ticket-reducer';
+import * as c from '../../actions/ActionTypes';
 
 describe("selectedTicketReducer", () => {
 
