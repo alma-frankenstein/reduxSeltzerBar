@@ -20,14 +20,20 @@ export default (state = {}, action) => {
       //   flavor.quantity = "no more left";
       // }
       console.log(newState);
-      console.log(newState[0]);
+      console.log(id);
+      console.log(newState[id]);
+      console.log(newState[id].quantity);
 
-      console.log(newState.id);
-      //console.log(newState.id.name);
-      if(newState.id === id && newState.quantity > 0) {
-        newState.quantity -= 1;
-      } else if (newState.id === id && newState.quantity === 0) {
-        newState.quantity = "no more left";
+      // if(newState.id === id && newState.quantity > 0) {
+      //   newState.quantity -= 1;
+      // } else if (newState.id === id && newState.quantity === 0) {
+      //   newState.quantity = "no more left";
+      // }
+      if(newState[id].quantity > 0) {
+        console.log('subtract 1');
+        newState[id].quantity -= 1;
+      } else if (newState[id].quantity === 0) {
+        newState[id].quantity = "no more left";
       }
       return newState;
   default:

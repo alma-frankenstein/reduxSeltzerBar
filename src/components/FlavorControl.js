@@ -34,7 +34,7 @@ class FlavorControl extends React.Component {
     //               formVisibleOnPage: false });
     // -------------------------------------------------------
     const { dispatch } = this.props;
-    const { name, brand, price, description, quantity, id } = newFlavor;
+    //const { name, brand, price, description, quantity, id } = newFlavor;
     const action = a.addFlavor(newFlavor);
     // {
     //   type: 'ADD_FLAVOR',
@@ -64,8 +64,10 @@ class FlavorControl extends React.Component {
     // });
     //-----------------------------------------------------------------
     const { dispatch } = this.props;
+
     const action = {
       type: 'BUY',
+      id: id
     }
     dispatch(action);
     //this.setState({masterFlavorList: masterFlavorList});
