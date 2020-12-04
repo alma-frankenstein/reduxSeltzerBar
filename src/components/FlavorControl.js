@@ -69,8 +69,12 @@ class FlavorControl extends React.Component {
     }
     dispatch(action);
     //this.setState({masterFlavorList: masterFlavorList});
-
   }
+
+    // // const selectedFlavor = this.state.masterFlavorList.filter(flavor => flavor.id === id)[0];
+    // // this.setState({selectedFlavor: selectedFlavor});
+    // const selectedFlavor = this.props.masterFlavorList[id];
+    // this.setState({selectedFlavor: selectedFlavor})
 
   handleClick = () => {
     if (this.state.selectedFlavor != null) {

@@ -12,7 +12,24 @@ export default (state = {}, action) => {
         id: id
       }
     });
+  case 'BUY' :
+    const newState = {...state}
+      // if(flavor.id === id && flavor.quantity > 0) {
+      //   flavor.quantity -= 1;
+      // } else if (flavor.id === id && flavor.quantity === 0) {
+      //   flavor.quantity = "no more left";
+      // }
+      console.log(newState);
+      console.log(newState[0]);
 
+      console.log(newState.id);
+      //console.log(newState.id.name);
+      if(newState.id === id && newState.quantity > 0) {
+        newState.quantity -= 1;
+      } else if (newState.id === id && newState.quantity === 0) {
+        newState.quantity = "no more left";
+      }
+      return newState;
   default:
     return state;
   }
