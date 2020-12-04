@@ -6,8 +6,23 @@ import flavorListReducer from '../../reducers/flavor-list-reducer';
 let store = createStore(rootReducer);
 
 describe("rootReducer", () => {
+
   test('Check that initial state of flavorListReducer matches root reducer', () => {
     expect(store.getState().masterFlavorList).toEqual(flavorListReducer(undefined, { type: null }));
+  });
+
+  test('Check that ADD_FLAVOR action works for flavorListReducer and root reducer', () => {
+    const action = {
+      type: 'ADD_FLAVOR',
+      name: "bubble gum",
+      brand: "fizzle",
+      price: "3",
+      description: "kind of gross",
+      quantity: 100,
+      id: 1
+    }
+    store.dispatch(action);
+    expect(store.getState().masterFlavorList).toEqual(flavorListReducer(undefined, action));
   });
   
   test('Check that initial state of formVisibleReducer matches root reducer', () => {
