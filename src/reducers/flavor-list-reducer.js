@@ -19,10 +19,10 @@ export default (state = {}, action) => {
       // } else if (flavor.id === id && flavor.quantity === 0) {
       //   flavor.quantity = "no more left";
       // }
-      console.log(newState);
-      console.log(id);
-      console.log(newState[id]);
-      console.log(newState[id].quantity);
+      // console.log(newState);
+      // console.log(id);
+      // console.log(newState[id]);
+      // console.log(newState[id].quantity);
 
       // if(newState.id === id && newState.quantity > 0) {
       //   newState.quantity -= 1;
@@ -30,7 +30,7 @@ export default (state = {}, action) => {
       //   newState.quantity = "no more left";
       // }
       if(newState[id].quantity > 0) {
-        console.log('subtract 1');
+        //console.log('subtract 1');
         newState[id].quantity -= 1;
       } else if (newState[id].quantity === 0) {
         newState[id].quantity = "no more left";

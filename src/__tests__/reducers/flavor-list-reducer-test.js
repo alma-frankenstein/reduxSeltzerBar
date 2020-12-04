@@ -12,6 +12,15 @@ describe('flavorListReducer', () => {
     id: 3
   };
 
+  const testState = {1: {
+    name: 'Bing',
+    brand: 'seltzerTown',
+    price: '1',
+    description: 'cherry',
+    quantity: 124,
+    id: 1}
+  }
+
   test('Should return default state if there is no action type passed into the reducer', () => {
     expect(flavorListReducer({}, { type: null })).toEqual({});
   });
@@ -36,6 +45,30 @@ describe('flavorListReducer', () => {
         description: description,
         quantity: quantity,
         id: id
+      }
+    });
+  });
+
+  test('Should decrement the number of pints in a flavor', () => {
+    //const { name, brand, price, description, quantity, id } = flavorData;
+    action = {
+      type: 'BUY',
+      // name: name,
+      // brand: brand,
+      // price: price,
+      // description: description,
+      // quantity: quantity,
+      id: 1
+    };
+
+    expect(flavorListReducer(testState, action)).toEqual({
+      1 : {
+        name: 'Bing',
+        brand: 'seltzerTown',
+        price: '1',
+        description: 'cherry',
+        quantity: 123,
+        id: 1
       }
     });
   });
