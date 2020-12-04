@@ -4,9 +4,9 @@
 
 ## Description
 
-Welcome to Jimbo's Seltzer Bar! This project demonstrates using shared and local state in a React app.
+Welcome to Jimbo's Seltzer Bar! This project demonstrates using Redux to manage state in a React app.
 
-Users can purchase a pint of a particular flavor and add their own flavor to the list. Two default flavors are provided. If a user clicks on the name of a flavor in the list, they will be shown details about that flavor.
+Users can purchase a pint of a particular flavor and add their own flavor to the list. If a user clicks on the name of a flavor in the list, they will be shown details about that flavor.
 
 ## Specs
 
@@ -20,7 +20,7 @@ Users can purchase a pint of a particular flavor and add their own flavor to the
 
 To run on your localhost, clone this repo using:
 
-```git clone https://github.com/alma-frankenstein/SeltzerBar seltzer```
+```git clone https://github.com/alma-frankenstein/reduxSeltzerBar seltzer```
 
 cd to the seltzer directory.
 
@@ -40,6 +40,7 @@ The diagram below shows the relationship between the components in this app. The
 
 * React
 * JXS
+* Redux
 
 # known bugs
 
