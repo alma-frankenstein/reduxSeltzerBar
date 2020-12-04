@@ -10,7 +10,8 @@ function FlavorList(props) {
       <h3>Click on the name of a flavor to see its details</h3>
       <hr/>
 
-      {props.flavorList.map((flavor) =>
+      {/* {props.flavorList.map((flavor) => */}
+      {Object.values(props.flavorList).map((flavor) =>
         <Flavor 
         whenFlavorClicked = { props.onFlavorSelection }
         whenSellClicked = { props.onSellFlavor }
@@ -28,7 +29,7 @@ function FlavorList(props) {
 }
 
 FlavorList.propTypes= {
-  flavorList: PropTypes.array,
+  flavorList: PropTypes.object,
   onFlavorSelection: PropTypes.func,
   onSellFlavor: PropTypes.func
 };
