@@ -4,6 +4,7 @@ import FlavorList from './FlavorList';
 import FlavorDetail from './FlavorDetail';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import * as a from './../actions';
 
 class FlavorControl extends React.Component {
 
@@ -34,20 +35,19 @@ class FlavorControl extends React.Component {
     // -------------------------------------------------------
     const { dispatch } = this.props;
     const { name, brand, price, description, quantity, id } = newFlavor;
-    const action = {
-      type: 'ADD_FLAVOR',
-      name: name,
-      brand: brand,
-      price: price,
-      description: description,
-      quantity: quantity,
-      id: id
-    }
+    const action = a.addFlavor(newFlavor);
+    // {
+    //   type: 'ADD_FLAVOR',
+    //   name: name,
+    //   brand: brand,
+    //   price: price,
+    //   description: description,
+    //   quantity: quantity,
+    //   id: id
+    // }
     dispatch(action);
     //this.setState({formVisibleOnPage: false});
-    const action2 = {
-      type: 'TOGGLE_FORM'
-    }
+    const action2 = a.toggleForm();
     dispatch(action2);
   }
 
@@ -83,9 +83,7 @@ class FlavorControl extends React.Component {
       //   formVisibleOnPage: !prevState.formVisibleOnPage,
       // }));
       const { dispatch } = this.props;
-      const action = {
-        type: 'TOGGLE_FORM'
-      }
+      const action = a.toggleForm();
       dispatch(action);
     }
   }
