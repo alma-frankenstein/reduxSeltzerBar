@@ -25,8 +25,12 @@ describe("rootReducer", () => {
     expect(store.getState().masterFlavorList).toEqual(flavorListReducer(undefined, action));
   });
   
-  test('Check that initial state of formVisibleReducer matches root reducer', () => {
-    expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, { type: null }));
+  test('Check that TOGGLE_FORM action works for formVisibleReducer and root reducer', () => {
+    const action = {
+      type: 'TOGGLE_FORM'
+    }
+    store.dispatch(action);
+    expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, action));
   });
 
   test('Should return default state if no action type is recognized', () => {
