@@ -10,7 +10,6 @@ function FlavorList(props) {
       <h3>Click on the name of a flavor to see its details</h3>
       <hr/>
 
-      {/* {props.flavorList.map((flavor) => */}
       {Object.values(props.flavorList).map((flavor) =>
         <Flavor 
         whenFlavorClicked = { props.onFlavorSelection }

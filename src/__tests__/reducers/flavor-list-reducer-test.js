@@ -1,7 +1,6 @@
 import flavorListReducer from '../../reducers/flavor-list-reducer';
 import * as c from '../../actions/ActionTypes';
 
-
 describe('flavorListReducer', () => {
 
   let action;
@@ -52,14 +51,8 @@ describe('flavorListReducer', () => {
   });
 
   test('Should decrement the number of pints in a flavor', () => {
-    //const { name, brand, price, description, quantity, id } = flavorData;
     action = {
       type: c.BUY,
-      // name: name,
-      // brand: brand,
-      // price: price,
-      // description: description,
-      // quantity: quantity,
       id: 1
     };
 
