@@ -5,6 +5,7 @@ import FlavorDetail from './FlavorDetail';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as a from './../actions';
+import * as c from '../actions/ActionTypes';
 
 class FlavorControl extends React.Component {
 
