@@ -1,4 +1,5 @@
 import * as actions from './../../actions';
+import * as c from './../../actions/ActionTypes';
 
 describe('seltzer actions', () => {
   it('toggleForm should create TOGGLE_FORM action', () => {
